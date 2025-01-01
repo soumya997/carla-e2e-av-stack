@@ -20,6 +20,8 @@ Below are two separate tables summarizing **A-LOAM** and **SC-A-LOAM** performan
 | **A-LOAM**            | **SC-A-LOAM**                            |
 |--------------------------|--------------------------------------|
 |<img src="media/loam_good_map.png">|<img src="media/sc_loam_map.png">|
+|<img src="media/aloam_path.png">|<img src="media/sc-a-loam_path.png">|
+
 
 
 
