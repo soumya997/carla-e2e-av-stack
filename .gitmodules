@@ -1,0 +1,3 @@
+[submodule "ros1_ws/ros1_ws/src/Lanelet2"]
+	path = ros1_ws/ros1_ws/src/Lanelet2
+	url = https://github.com/fzi-forschungszentrum-informatik/Lanelet2
