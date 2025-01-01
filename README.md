@@ -176,4 +176,4 @@ python src/vehicle_ctrl/vehicle_ctrl/simple_ctrl.py
 ```
 
 
-PS: contributions are welcomes
+PS: contributions are welcomes.
