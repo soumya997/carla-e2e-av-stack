@@ -64,20 +64,9 @@ Below are two separate tables summarizing **A-LOAM** and **SC-A-LOAM** performan
 
 ### Comparison based on the a fixed trajectory
 
-<h3>A-LOAM</h3>
-<figure class="video_container">
- <video controls="true" allowfullscreen="true">
- <source src="media/aloam_v2_comparison.mp4" type="video/mp4">
- </video>
-</figure>
-
-
-<h3>SC-A-LOAM</h3>
-<figure class="video_container">
- <video controls="true" allowfullscreen="true">
- <source src="media/sc-aloam_v2_comparison_v2.mp4" type="video/mp4">
- </video>
-</figure>
+| **A-LOAM**            | **SC-A-LOAM**                            |
+|--------------------------|--------------------------------------|
+|<img src="media/aloam_v2_comparison.gif">|<img src="media/sc-aloam_v2_comparison_v2.gif">|
 
 
 
