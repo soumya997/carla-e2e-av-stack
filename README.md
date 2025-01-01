@@ -64,26 +64,22 @@ Below are two separate tables summarizing **A-LOAM** and **SC-A-LOAM** performan
 
 ### Comparison based on the a fixed trajectory
 
+<h3>A-LOAM</h3>
+<figure class="video_container">
+ <video controls="true" allowfullscreen="true">
+ <source src="media/aloam_v2_comparison.mp4" type="video/mp4">
+ </video>
+</figure>
 
 
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <!-- A-LOAM Video -->
-  <div style="flex: 1; text-align: center;">
-    <h3>A-LOAM</h3>
-    <video controls="true" style="max-width: 90%; border: 1px solid #ddd;">
-      <source src="media/aloam_v2_comparison.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <!-- SC-A-LOAM Video -->
-  <div style="flex: 1; text-align: center;">
-    <h3>SC-A-LOAM</h3>
-    <video controls="true" style="max-width: 90%; border: 1px solid #ddd;">
-      <source src="media/sc-aloam_v2_comparison_v2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
+<h3>SC-A-LOAM</h3>
+<figure class="video_container">
+ <video controls="true" allowfullscreen="true">
+ <source src="media/sc-aloam_v2_comparison_v2.mp4" type="video/mp4">
+ </video>
+</figure>
+
+
 
 
 
