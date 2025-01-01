@@ -1,5 +1,5 @@
 # Carla E2E AV Stack
-This repository contains code for a perception and control stack for Autonomous Vehicle. Generally there are lots of part of AV development, perception, planning and control and there are different algorithm to be tested. Carla gives a very good plateform develop things there as well as test it. But, to do so, you have to have the basic pipeline ready. Maybe you just want to test some perception algorithm and pluge the output to planning and control to see how the vehicle behaves. This is where Carla E2E AV stack comes to the picture, which gives you simple planning and control solition and you can easyly pluge and play. 
+This repository offers a ready-to-use perception and control stack for autonomous vehicles, designed to streamline development and testing in CARLA. With a simple plug-and-play approach, it provides a foundational pipeline for experimenting with perception algorithms and integrating outputs with planning and control, saving time and letting you focus on innovation.
 
 <img src="media/demo_vod1.gif">
 
