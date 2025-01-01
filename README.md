@@ -1,8 +1,8 @@
 # Carla E2E AV Stack
 This repository offers a ready-to-use perception and control stack for autonomous vehicles, designed to streamline development and testing in CARLA. With a simple plug-and-play approach, it provides a foundational pipeline for experimenting with perception algorithms and integrating outputs with planning and control, saving time and letting you focus on innovation.
 
-<img src="media/demo_vod1.gif">
-
+<img src="media/demo_vod2.gif">
+<br>
 
 currently its capable of,
 - load any town's lanelet map
@@ -66,7 +66,7 @@ Below are two separate tables summarizing **A-LOAM** and **SC-A-LOAM** performan
 
 | **A-LOAM**            | **SC-A-LOAM**                            |
 |--------------------------|--------------------------------------|
-|<video src="media/aloam_v2_comparison.mp4">|<video src="media/sc-aloam_v2_comparison_v2.mp4">|
+|media/aloam_v2_comparison.mp4|media/sc-aloam_v2_comparison_v2.mp4|
 
 
 
