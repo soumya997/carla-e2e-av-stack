@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import rospy
 from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point
@@ -10,10 +12,14 @@ class Lanelet2Publisher:
         self.publisher_ = rospy.Publisher('lanelet2_map', MarkerArray, queue_size=10)
         self.timer = rospy.Timer(rospy.Duration(1.0), self.timer_callback)
 
-        # Load the Lanelet2 map with LatLonProjector
+        # Get the map path from the ROS parameter server.
+        # If not provided, default to "maps/Town01_lanelet.osm".
+        map_path = rospy.get_param('~map_path')
+        
+        # Load the Lanelet2 map
         projector = UtmProjector(lanelet2.io.Origin(0, 0))
-        self.lanelet_map = lanelet2.io.load("/home/opencvuniv/Work/somusan/robotics/nice_e2e_carla_av/trash/carla_e2e_ws/src/vehicle_ctrl/maps/Town01_lanelet.osm", projector)
-        rospy.loginfo("Map loaded ...")
+        self.lanelet_map = lanelet2.io.load(map_path, projector)
+        rospy.loginfo("Map loaded from: %s", map_path)
 
     def timer_callback(self, event):
         marker_array = MarkerArray()
@@ -35,7 +41,6 @@ class Lanelet2Publisher:
             if "subtype" not in lanelet_.attributes.keys():
                 for point in lanelet2.geometry.to2D(lanelet_.leftBound):
                     marker.points.append(Point(x=point.x, y=point.y, z=0.0))
-
                 for point in lanelet2.geometry.to2D(lanelet_.rightBound):
                     marker.points.append(Point(x=point.x, y=point.y, z=0.0))
 

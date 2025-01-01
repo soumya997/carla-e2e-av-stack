@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Declare a launch argument for map_path with a default value -->
+  <arg name="map_path" default="/home/opencvuniv/Work/somusan/robotics/nice_e2e_carla_av/trash/carla-e2e-av-stack/ros1_ws/src/vehicle_ctrl/maps/Town01_lanelet.osm"/>
+
+  <!-- Launch map.py -->
+  <node name="lanelet2_publisher" pkg="vehicle_ctrl" type="map.py" output="screen">
+    <param name="map_path" value="$(arg map_path)" />
+  </node>
+
+  <!-- Launch remap_goal.py -->
+  <node name="goal_remap" pkg="vehicle_ctrl" type="remap_goal.py" output="screen">
+  </node>
+
+  <!-- Launch simple_ctrl.py -->
+  <node name="carla_vehicle_control" pkg="vehicle_ctrl" type="simple_ctrl.py" output="screen">
+  </node>
+
+  <!-- Launch odom_rect_marker.py -->
+  <node name="vehicle_marker_node" pkg="vehicle_ctrl" type="odom_rect_marker.py" output="screen">
+  </node>
+
+  <arg name="rviz" default="true" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find vehicle_ctrl)/rviz/carla_e2e_av.rviz" />
+    </group>
+
+</launch>
