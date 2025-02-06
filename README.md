@@ -87,7 +87,7 @@ Run the AV stack without odometry from LOAM in ROS1
 
 **build:**
 
-```
+```python
 $ git clone https://github.com/soumya997/carla-e2e-av-stack.git
 $ cd carla-e2e-av-stack/ros1_ws
 $ catkin_make
@@ -96,7 +96,7 @@ $ source devel/setup.bash
 
 Run the code:
 
-```
+```python
 $ $CARLA_ROOT/CarlaUE4.sh -quality-level=Low -prefernvidia -nosound
 
 $ cd /home/opencvuniv/carla-ros-bridge/catkin_ws && source devel/setup.bash
@@ -121,7 +121,7 @@ now, the car should be start running
 1. uncomment code under `# Subscriber to the LOAM odometry topic`, and comment out the code under `# Subscriber to the /carla/ego_vehicle/odometry topic`.
 2. run A-LOAM code using the below code,
 
-```
+```python
 $ roslaunch aloam_velodyne aloam_velodyne_VLP_16_v2.launch lidar_topic:=/carla/ego_vehicle/lidar
 $ python src/loam_utils/scripts/static_trf_broadcast.py
 $ python src/loam_utils/scripts/aloam_odom_trf.py
@@ -129,7 +129,7 @@ $ python src/loam_utils/scripts/aloam_odom_trf.py
 
 3. run A-LOAM code using the below code,
 
-```
+```python
 $ roslaunch aloam_velodyne aloam_mulran.launch
 $ python src/loam_utils/scripts/static_trf_broadcast.py
 $ python src/loam_utils/scripts/aloam_odom_trf.py
@@ -139,7 +139,7 @@ $ python src/loam_utils/scripts/aloam_odom_trf.py
 ### Run ROS2 code
 Run the AV stack without odometry from LOAM in ROS1. LOAM dont have ROS2 support, so uncomment the code under `# Subscriber to the /carla/ego_vehicle/odometry topic` and comment the code under `# Subscriber to the LOAM odometry topic`. 
 
-```
+```python
 # in a new terminal, run carla first
 # ./CarlaUE4.sh  # or ./CarlaUE4.sh -prefernvidia # $ ~/carla_simulator/PythonAPI/util/config.py --map Town01
 $CARLA_ROOT/CarlaUE4.sh -quality-level=Low -prefernvidia -nosound
