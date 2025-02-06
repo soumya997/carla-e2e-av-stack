@@ -157,7 +157,7 @@ ros2 launch carla_spawn_objects carla_example_ego_vehicle.launch.py spawn_sensor
  
  
 # load the town1 lanelet map
-python src/vehicle_ctrl/vehicle_ctrl/map.py
+python src/vehicle_ctrl/vehicle_ctrl/lanelet_map.py
  
  
 # in new terminal, launch the rviz2 [set the global frame to map in rviz2]
