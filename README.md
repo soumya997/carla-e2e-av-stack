@@ -12,6 +12,13 @@ currently its capable of,
 - Waypoint following using PID control.
 - Run in both ROS1 and ROS2
 
+  
+## Articles:
+- Setup ROS2 with Carla: https://learnopencv.com/ros2-and-carla-setup-guide/
+- About building this project: https://learnopencv.com/pid-controller-ros-2-carla/
+- LiDAR SLAM: https://learnopencv.com/lidar-slam-with-ros2/
+
+
 
 ## A-LOAM and SC-A-LOAM comparison
 
@@ -179,9 +186,4 @@ python src/vehicle_ctrl/vehicle_ctrl/simple_ctrl.py
 
 
 PS: contributions are welcomes.
-
-## Articles:
-- Setup ROS2 with Carla: https://learnopencv.com/ros2-and-carla-setup-guide/
-- About building this project: https://learnopencv.com/pid-controller-ros-2-carla/
-- LiDAR SLAM: https://learnopencv.com/lidar-slam-with-ros2/
 
