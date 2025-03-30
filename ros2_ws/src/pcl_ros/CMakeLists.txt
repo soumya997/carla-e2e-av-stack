@@ -8,6 +8,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -fPIC)
 endif()
 
+set(PCL_DIR "/home/somusan/miniconda3/pkgs/pcl-1.14.1-h679aaff_7/share/pcl-1.14")
+
 ## Find system dependencies
 find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED QUIET COMPONENTS common features filters io segmentation surface)

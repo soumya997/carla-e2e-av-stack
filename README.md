@@ -177,5 +177,64 @@ python src/vehicle_ctrl/vehicle_ctrl/remap_goal.py
 python src/vehicle_ctrl/vehicle_ctrl/simple_ctrl.py
 ```
 
+### Trouble shoot
+- if getting issue builing the packages, something like
+
+```
+$ colcon build --packages-select pcl_ros
+Starting >>> pcl_ros 
+--- stderr: pcl_ros                         
+CMake Error at CMakeLists.txt:13 (find_package):
+  By not providing "FindPCL.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "PCL", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "PCL" with any of
+  the following names:
+
+    PCLConfig.cmake
+    pcl-config.cmake
+
+  Add the installation prefix of "PCL" to CMAKE_PREFIX_PATH or set "PCL_DIR"
+  to a directory containing one of the above files.  If "PCL" provides a
+  separate development package or SDK, be sure it has been installed.
+```
+
+**Solution:**
+
+```
+- locate PCLConfig.cmake
+- $ export PCL_DIR=<path from above command> #/home/somusan/miniconda3/envs/gaussian_splattingv1/share/pcl-1.14
+- $ colcon build --packages-select pcl_conversions
+- colcon build --packages-select pcl_ros
+```
+
+
+- issue in running lidar_to_grid_node
+
+```
+$ ros2 run lidar_to_grid lidar_to_grid_node
+/home/somusan/dev-somusan/trash/carla-e2e-av-stack/ros2_ws/install/lidar_to_grid/lib/lidar_to_grid/lidar_to_grid_node: error while loading shared libraries: libpcl_common.so.1.14: cannot open shared object file: No such file or directory
+[ros2run]: Process exited with failure 127
+somusan@somusan:~/.../carla-e2e-av-stack/ros2_ws
+$ locate libpcl_common.so
+/home/somusan/miniconda3/envs/gaussian_splattingv1/lib/libpcl_common.so
+/home/somusan/miniconda3/envs/gaussian_splattingv1/lib/libpcl_common.so.1.14
+/home/somusan/miniconda3/envs/gaussian_splattingv1/lib/libpcl_common.so.1.14.1
+/home/somusan/miniconda3/pkgs/pcl-1.14.1-h679aaff_7/lib/libpcl_common.so
+/home/somusan/miniconda3/pkgs/pcl-1.14.1-h679aaff_7/lib/libpcl_common.so.1.14
+/home/somusan/miniconda3/pkgs/pcl-1.14.1-h679aaff_7/lib/libpcl_common.so.1.14.1
+/snap/cloudcompare/208/usr/lib/x86_64-linux-gnu/libpcl_common.so.1.8
+/snap/cloudcompare/208/usr/lib/x86_64-linux-gnu/libpcl_common.so.1.8.1
+/usr/lib/x86_64-linux-gnu/libpcl_common.so.1.12
+/usr/lib/x86_64-linux-gnu/libpcl_common.so.1.12.1
+somusan@somusan:~/.../carla-e2e-av-stack/ros2_ws
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/somusan/miniconda3/envs/gaussian_splattingv1/lib/
+somusan@somusan:~/.../carla-e2e-av-stack/ros2_ws
+$ ros2 run lidar_to_grid lidar_to_grid_node
+[INFO] [1743370182.039492340] [lidar_to_grid_node]: LidarToGridNode initialized
+^C[INFO] [1743370196.641993804] [rclcpp]: signal_handler(signum=2)
+```
+
 
 PS: contributions are welcomes.
