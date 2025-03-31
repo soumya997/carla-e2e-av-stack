@@ -5,14 +5,16 @@ This repository offers a ready-to-use perception and control stack for autonomou
 <br>
 
 currently its capable of,
-- load any town's lanelet map
-- spawn and set goal using rviz
-- Use A-LOAM or SC-A-LOAM for odometry.
-- evaluate odometry based on MSE-ATE, and scale error.
-- Waypoint following using PID control.
-- Run in both ROS1 and ROS2
+- [x] load any town's lanelet map
+- [x] spawn and set goal using rviz
+- [x] Use A-LOAM or SC-A-LOAM for odometry.
+- [x] evaluate odometry based on MSE-ATE, and scale error.
+- [x] Waypoint following using PID control.
+- [x] Run in both ROS1 and ROS2
+- [ ] EKF sensor fusion of IMU and LiDAR 
+- [ ] Add Occupancy grid carla E2E AV
 
-  
+
 ## Articles:
 - Setup ROS2 with Carla: https://learnopencv.com/ros2-and-carla-setup-guide/
 - About building this project: https://learnopencv.com/pid-controller-ros-2-carla/
